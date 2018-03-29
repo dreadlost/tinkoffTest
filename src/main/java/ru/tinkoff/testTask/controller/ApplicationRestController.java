@@ -32,7 +32,7 @@ public class ApplicationRestController {
     }
 
     @ApiOperation(value = "Метод получения последней заявки контакта по ид")
-    @RequestMapping(value = "/{contactId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{contactId}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     @ApiResponses(value = { @ApiResponse(code = 404, message = "Контакт не найден"),
             @ApiResponse(code = 200, message = "Успех") })
     ResponseEntity<?> readApplication(@ApiParam(value = "Идентификатор контакта", required = true) @PathVariable("contactId") Long contactId){
